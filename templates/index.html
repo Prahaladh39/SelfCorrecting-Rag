@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniTech Copilot | Advanced RAG</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Abstract Background -->
+    <div class="blob-bg blob-1"></div>
+    <div class="blob-bg blob-2"></div>
+    <div class="blob-bg blob-3"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <i class="fa-solid fa-layer-group logo-icon"></i>
+                <h2>OmniTech</h2>
+            </div>
+            
+            <div class="new-chat-btn" id="newChatBtn">
+                <i class="fa-solid fa-plus"></i>
+                <span>New Analysis</span>
+            </div>
+
+            <div class="history-list">
+                <p class="history-title">Recent Threads</p>
+                <div class="history-item active">
+                    <i class="fa-regular fa-message"></i>
+                    <span>Q3 Revenue Overview</span>
+                </div>
+                <div class="history-item">
+                    <i class="fa-regular fa-message"></i>
+                    <span>CyberDyne Acquisition</span>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" alt="User">
+                    <div class="user-details">
+                        <span class="user-name">Financial Analyst</span>
+                        <span class="user-role">Agentic Mode Active</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main glass-panel">
+            <header class="chat-header">
+                <div class="header-info">
+                    <h3>OmniTech Reasoning Engine</h3>
+                    <span class="status-indicator">
+                        <span class="pulse"></span> Online • LangGraph Connected
+                    </span>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" title="Export Thread"><i class="fa-solid fa-download"></i></button>
+                    <button class="icon-btn" title="Settings"><i class="fa-solid fa-gear"></i></button>
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chatBox">
+                <!-- Welcome Message -->
+                <div class="message-wrapper ai-wrapper">
+                    <div class="avatar ai-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="message ai-message">
+                        Hello! I am the OmniTech RAG Copilot. I have deep access to the Q3 Financial and Strategic Operations Report, powered by hybrid vector retrieval and a self-correcting agent loop. How can I help you investigate the data today?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator (Hidden by default) -->
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="avatar ai-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="typing-bubble">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <span class="status-text" id="agentStatusText">Agent is searching ChromaDB...</span>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chatForm" class="input-glass">
+                    <input type="text" id="userInput" placeholder="Ask about Q3 revenue, acquisitions, or Europe..." autocomplete="off" required>
+                    <button type="submit" id="sendBtn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+                <p class="disclaimer">AI responses are evaluated against the document context but should be verified.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>

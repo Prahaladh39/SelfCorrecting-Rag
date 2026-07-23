@@ -1,0 +1,28 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Databases and Indexes
+chroma_db/
+*.pkl
+bm25_index.pkl
+
+# Processed data output
+*_processed.json
+
+# Agent plans (Optional, feel free to remove if you want to track them)
+implementation_plan.md
+task.md
+
+# OS/Editor
+.DS_Store
+.vscode/
+.idea/
